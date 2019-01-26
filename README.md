@@ -9,3 +9,17 @@ When I first started working with Electron, the biggest challange I had was crea
 
 ## Code
 The styles and html required for the layout are contained in the index.html file.
+
+## Run the project
+To clone and run this repository you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+
+```bash
+# Clone this repository
+git clone https://github.com/shah-gaurav/electron-holy-grail
+# Go into the repository
+cd electron-holy-grail
+# Install dependencies
+npm install
+# Run the app
+npm start
+```
