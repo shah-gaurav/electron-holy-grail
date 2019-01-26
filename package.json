@@ -1,21 +1,20 @@
 {
-  "name": "electron-quick-start",
+  "name": "electron-holy-grail",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "A sample project that shows how to create a holy grail layout in Electron using CSS Grid Layout",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "https://github.com/shah-gaurav/electron-holy-grail",
   "keywords": [
     "Electron",
-    "quick",
-    "start",
-    "tutorial",
+    "Holy Grail",
+    "Css Grid",
     "demo"
   ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
+  "author": "Gaurav Shah",
+  "license": "MIT",
   "devDependencies": {
     "electron": "^4.0.2"
   }

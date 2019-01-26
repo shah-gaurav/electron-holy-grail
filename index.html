@@ -1,19 +1,242 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <meta charset="UTF-8" />
+    <title>Electron Holy Grail</title>
+    <style>
+      /** Styles needed for layout **/
+      html,
+      body {
+        padding: 0px;
+        margin: 0px;
+        overflow: hidden;
+      }
+      .window {
+        display: grid;
+        grid-template-rows: 60px auto 40px;
+        grid-template-columns: 250px 1fr 250px;
+        height: 100vh;
+      }
+      .toolbar,
+      .statusbar {
+        grid-column-start: 1;
+        grid-column-end: 4;
+      }
+      .left-panel,
+      .main-content,
+      .right-panel {
+        display: grid;
+        grid-template-rows: 25px auto;
+        height: calc(100vh - 100px);
+      }
+      .panel-body {
+        overflow: auto;
+      }
+
+      /** Styles to make areas look pretty (NOT NEEDED FOR THE ACTUAL HOLYGRAIL LAYOUT) **/
+      .toolbar,
+      .statusbar {
+        text-align: center;
+        background-color: grey;
+        padding: 10px;
+        color: white;
+      }
+
+      .panel-title {
+        background-color: darkgrey;
+        padding: 5px;
+        color: white;
+        text-align: center;        
+      }
+
+      .panel-body {
+        background-color: lightgrey;
+        padding: 10px;
+      }
+    </style>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using Node.js <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
-
+    <div class="window">
+      <div class="toolbar">TOOLBAR</div>
+      <div class="left-panel">
+        <div class="panel-title">Left Panel</div>
+        <div class="panel-body">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Pellentesque rhoncus est eu est aliquet blandit. Morbi in dictum
+            massa, sed feugiat est. Class aptent taciti sociosqu ad litora
+            torquent per conubia nostra, per inceptos himenaeos. In sed semper
+            ipsum. Curabitur in nisi eu nisi hendrerit tristique. Duis
+            pellentesque, sem eu dignissim finibus, diam lacus ultrices diam,
+            sed finibus nulla libero vel ipsum. Ut dignissim non lacus a
+            placerat. Curabitur iaculis mi ultricies nulla congue pretium et
+            quis dui.
+          </p>
+          <p>
+            Integer dignissim neque et augue feugiat mattis. Sed sit amet mi
+            nisi. Nullam id dolor urna. Pellentesque scelerisque luctus enim, id
+            semper arcu hendrerit in. Cras pulvinar purus at auctor cursus.
+            Suspendisse semper elementum lacus, non rhoncus purus mattis at.
+            Fusce sed tincidunt sapien. Suspendisse id sagittis velit. Maecenas
+            condimentum, massa ac facilisis varius, lorem diam ultrices velit,
+            et euismod lectus lorem sit amet nisi. Nulla id nisi ullamcorper,
+            tempus enim sed, tempus mi. Praesent consectetur nulla consectetur
+            fringilla tristique. Etiam consectetur vehicula finibus. Nulla vitae
+            pretium ipsum.
+          </p>
+          <p>
+            Nullam non accumsan lectus. Nulla sit amet sagittis tortor.
+            Suspendisse ultrices in erat in dignissim. Donec eu leo id elit
+            laoreet ultricies. Vivamus commodo feugiat ipsum quis sodales. Proin
+            dictum, tortor et aliquet viverra, magna sem sodales lorem, sed
+            venenatis ipsum tellus vel velit. Praesent vel dolor magna.
+          </p>
+          <p>
+            Nullam a justo sit amet nulla luctus vestibulum. Aliquam dictum et
+            arcu vitae eleifend. Nullam posuere, neque vel dapibus pharetra,
+            ligula urna porta elit, nec euismod sapien justo dictum nunc. Mauris
+            varius vulputate lorem a varius. Praesent pharetra sem purus, et
+            pellentesque orci fermentum vitae. Sed mattis diam vel semper
+            consequat. Donec elit augue, tempus in ex et, pellentesque cursus
+            turpis. Quisque et molestie mi. Morbi id ex augue.
+          </p>
+          <p>
+            Maecenas ullamcorper neque nec ligula sollicitudin, ac pretium eros
+            malesuada. Pellentesque rhoncus venenatis dictum. Quisque a varius
+            neque. Fusce eu dignissim diam. Aliquam lobortis in lacus at
+            faucibus. Morbi in interdum est. In venenatis sem quis nisl
+            consectetur, et pharetra lacus sodales. Fusce non velit tincidunt
+            nisi ultrices fermentum id id est. Quisque iaculis turpis quis est
+            venenatis vestibulum. Proin pharetra massa et nulla lacinia, ac
+            lobortis enim interdum. Sed non ultricies massa, et finibus lectus.
+            Nunc sit amet nunc rhoncus, aliquet nisi non, gravida leo. Cras
+            dignissim, ipsum eget mollis dictum, erat ex tincidunt nulla, ac
+            commodo ante ipsum quis dolor. Sed pretium maximus nulla, non
+            pretium ligula pellentesque eget.
+          </p>
+        </div>
+      </div>
+      <div class="main-content">
+        <div class="panel-title">Main Content</div>
+        <div class="panel-body">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Pellentesque rhoncus est eu est aliquet blandit. Morbi in dictum
+            massa, sed feugiat est. Class aptent taciti sociosqu ad litora
+            torquent per conubia nostra, per inceptos himenaeos. In sed semper
+            ipsum. Curabitur in nisi eu nisi hendrerit tristique. Duis
+            pellentesque, sem eu dignissim finibus, diam lacus ultrices diam,
+            sed finibus nulla libero vel ipsum. Ut dignissim non lacus a
+            placerat. Curabitur iaculis mi ultricies nulla congue pretium et
+            quis dui.
+          </p>
+          <p>
+            Integer dignissim neque et augue feugiat mattis. Sed sit amet mi
+            nisi. Nullam id dolor urna. Pellentesque scelerisque luctus enim, id
+            semper arcu hendrerit in. Cras pulvinar purus at auctor cursus.
+            Suspendisse semper elementum lacus, non rhoncus purus mattis at.
+            Fusce sed tincidunt sapien. Suspendisse id sagittis velit. Maecenas
+            condimentum, massa ac facilisis varius, lorem diam ultrices velit,
+            et euismod lectus lorem sit amet nisi. Nulla id nisi ullamcorper,
+            tempus enim sed, tempus mi. Praesent consectetur nulla consectetur
+            fringilla tristique. Etiam consectetur vehicula finibus. Nulla vitae
+            pretium ipsum.
+          </p>
+          <p>
+            Nullam non accumsan lectus. Nulla sit amet sagittis tortor.
+            Suspendisse ultrices in erat in dignissim. Donec eu leo id elit
+            laoreet ultricies. Vivamus commodo feugiat ipsum quis sodales. Proin
+            dictum, tortor et aliquet viverra, magna sem sodales lorem, sed
+            venenatis ipsum tellus vel velit. Praesent vel dolor magna.
+          </p>
+          <p>
+            Nullam a justo sit amet nulla luctus vestibulum. Aliquam dictum et
+            arcu vitae eleifend. Nullam posuere, neque vel dapibus pharetra,
+            ligula urna porta elit, nec euismod sapien justo dictum nunc. Mauris
+            varius vulputate lorem a varius. Praesent pharetra sem purus, et
+            pellentesque orci fermentum vitae. Sed mattis diam vel semper
+            consequat. Donec elit augue, tempus in ex et, pellentesque cursus
+            turpis. Quisque et molestie mi. Morbi id ex augue.
+          </p>
+          <p>
+            Maecenas ullamcorper neque nec ligula sollicitudin, ac pretium eros
+            malesuada. Pellentesque rhoncus venenatis dictum. Quisque a varius
+            neque. Fusce eu dignissim diam. Aliquam lobortis in lacus at
+            faucibus. Morbi in interdum est. In venenatis sem quis nisl
+            consectetur, et pharetra lacus sodales. Fusce non velit tincidunt
+            nisi ultrices fermentum id id est. Quisque iaculis turpis quis est
+            venenatis vestibulum. Proin pharetra massa et nulla lacinia, ac
+            lobortis enim interdum. Sed non ultricies massa, et finibus lectus.
+            Nunc sit amet nunc rhoncus, aliquet nisi non, gravida leo. Cras
+            dignissim, ipsum eget mollis dictum, erat ex tincidunt nulla, ac
+            commodo ante ipsum quis dolor. Sed pretium maximus nulla, non
+            pretium ligula pellentesque eget.
+          </p>
+        </div>
+      </div>
+      <div class="right-panel">
+        <div class="panel-title">Right Panel</div>
+        <div class="panel-body">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Pellentesque rhoncus est eu est aliquet blandit. Morbi in dictum
+            massa, sed feugiat est. Class aptent taciti sociosqu ad litora
+            torquent per conubia nostra, per inceptos himenaeos. In sed semper
+            ipsum. Curabitur in nisi eu nisi hendrerit tristique. Duis
+            pellentesque, sem eu dignissim finibus, diam lacus ultrices diam,
+            sed finibus nulla libero vel ipsum. Ut dignissim non lacus a
+            placerat. Curabitur iaculis mi ultricies nulla congue pretium et
+            quis dui.
+          </p>
+          <p>
+            Integer dignissim neque et augue feugiat mattis. Sed sit amet mi
+            nisi. Nullam id dolor urna. Pellentesque scelerisque luctus enim, id
+            semper arcu hendrerit in. Cras pulvinar purus at auctor cursus.
+            Suspendisse semper elementum lacus, non rhoncus purus mattis at.
+            Fusce sed tincidunt sapien. Suspendisse id sagittis velit. Maecenas
+            condimentum, massa ac facilisis varius, lorem diam ultrices velit,
+            et euismod lectus lorem sit amet nisi. Nulla id nisi ullamcorper,
+            tempus enim sed, tempus mi. Praesent consectetur nulla consectetur
+            fringilla tristique. Etiam consectetur vehicula finibus. Nulla vitae
+            pretium ipsum.
+          </p>
+          <p>
+            Nullam non accumsan lectus. Nulla sit amet sagittis tortor.
+            Suspendisse ultrices in erat in dignissim. Donec eu leo id elit
+            laoreet ultricies. Vivamus commodo feugiat ipsum quis sodales. Proin
+            dictum, tortor et aliquet viverra, magna sem sodales lorem, sed
+            venenatis ipsum tellus vel velit. Praesent vel dolor magna.
+          </p>
+          <p>
+            Nullam a justo sit amet nulla luctus vestibulum. Aliquam dictum et
+            arcu vitae eleifend. Nullam posuere, neque vel dapibus pharetra,
+            ligula urna porta elit, nec euismod sapien justo dictum nunc. Mauris
+            varius vulputate lorem a varius. Praesent pharetra sem purus, et
+            pellentesque orci fermentum vitae. Sed mattis diam vel semper
+            consequat. Donec elit augue, tempus in ex et, pellentesque cursus
+            turpis. Quisque et molestie mi. Morbi id ex augue.
+          </p>
+          <p>
+            Maecenas ullamcorper neque nec ligula sollicitudin, ac pretium eros
+            malesuada. Pellentesque rhoncus venenatis dictum. Quisque a varius
+            neque. Fusce eu dignissim diam. Aliquam lobortis in lacus at
+            faucibus. Morbi in interdum est. In venenatis sem quis nisl
+            consectetur, et pharetra lacus sodales. Fusce non velit tincidunt
+            nisi ultrices fermentum id id est. Quisque iaculis turpis quis est
+            venenatis vestibulum. Proin pharetra massa et nulla lacinia, ac
+            lobortis enim interdum. Sed non ultricies massa, et finibus lectus.
+            Nunc sit amet nunc rhoncus, aliquet nisi non, gravida leo. Cras
+            dignissim, ipsum eget mollis dictum, erat ex tincidunt nulla, ac
+            commodo ante ipsum quis dolor. Sed pretium maximus nulla, non
+            pretium ligula pellentesque eget.
+          </p>
+        </div>
+      </div>
+      <div class="statusbar">STATUSBAR</div>
+    </div>
     <script>
       // You can also require other files to run in this process
-      require('./renderer.js')
+      require('./renderer.js');
     </script>
   </body>
 </html>
