@@ -16,6 +16,6 @@
   "author": "Gaurav Shah",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^4.2.12"
+    "electron": "^11.5.0"
   }
 }
